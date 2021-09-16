@@ -1,0 +1,69 @@
+@import "../../../sass/Helper/mixin";
+@import "../../../sass/Helper/variables";
+@import "../../../sass//Components/button";
+
+.carousel-indicators {
+    li {
+        visibility: hidden;
+    }
+}
+.movieComing {
+    margin-top: 50px;
+    .nav {
+        border: none;
+        align-items: center;
+        text-align: center;
+        font-weight: 600;
+        a {
+            border: none;
+            font-size: 20px;
+            align-items: center;
+            @include newsLink(24px);
+        }
+        .active {
+            p {
+                color: $color-red-0;
+                font-size: 24px;
+            }
+        }
+    }
+    .carousel-control-prev {
+        .carousel-control-prev-icon {
+            @include backSession();
+        }
+        left: -150px;
+        img {
+            width: 50px;
+        }
+    }
+    .carousel-control-next {
+        .carousel-control-next-icon {
+            @include nextSession();
+        }
+        right: -150px;
+        img {
+            width: 50px;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .nav-tabs {
+        padding-top: 75px;
+    }
+    .movieComing .movieComing_hover .movieComing_item .movieComing_soon {
+        bottom: 130px;
+        p {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .movieComing .movieComing_hover .movieComing_item .movieComing_soon {
+        bottom: 120px;
+        p {
+            font-size: 12px;
+        }
+    }
+}

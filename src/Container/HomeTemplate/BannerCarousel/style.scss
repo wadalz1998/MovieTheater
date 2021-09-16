@@ -1,0 +1,106 @@
+@import "../../../sass/Helper/mixin";
+@import "../../../sass/Helper/variables";
+@import "../../../sass//Components/button";
+
+.movieCarousel {
+    position: relative;
+    .carousel-indicators {
+        position: absolute;
+        bottom: 50px;
+        li {
+            background-color: #d8d8d8;
+            width: 12px;
+            height: 12px;
+            padding: 0;
+            border-radius: 50%;
+            border: none;
+            color: transparent;
+        }
+    }
+
+    .carousel-item {
+        img {
+            width: 100%;
+            height: 580px;
+        }
+        .movie__detail {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) scale(0.8);
+            text-align: center;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+
+            transition: all 0.5s;
+            // i
+            img {
+                width: 80px;
+                height: 80px;
+                font-size: 30px;
+                border-radius: 50%;
+                border: 1px solid white;
+                margin: 10px auto;
+                line-height: 80px;
+                transition: all 0.5s;
+                opacity: 0.2;
+            }
+        }
+        &:hover {
+            // i
+            img {
+                opacity: 1;
+                // transform: translateY(-50%) scale(1);
+            }
+        }
+    }
+    .buyTicket {
+        position: absolute;
+        display: block;
+        max-width: 1140px;
+        margin: auto;
+        height: 80px;
+        bottom: 0;
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background-color: #fff;
+        border-radius: 5px;
+        z-index: 2;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        .content {
+            top: 50%;
+            transform: translate(0, 50%);
+            .btn {
+                @include button();
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+            .friendly {
+                display: block;
+                font-size: 15px;
+            }
+            .origin {
+                font-size: 11px;
+                color: #aaa;
+            }
+            .btnMua {
+                background-color: #4a4a4a;
+                border: none;
+                text-transform: uppercase;
+                border-radius: 4px;
+                position: absolute;
+                // transform: translate(-10%);
+                padding: 8px 25px;
+                @include styleText($fs-1, $color-gray-3, $fw-normal-1);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .movieCarousel {
+        display: none;
+    }
+}

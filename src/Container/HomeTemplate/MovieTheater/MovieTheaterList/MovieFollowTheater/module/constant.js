@@ -1,0 +1,10 @@
+//Request
+export const LIST_MOVIEFOLLOWTHEATER_REQUEST =
+  "listMovieFollowTheaterReducer/LIST_MOVIEFOLLOWTHEATER_REQUEST";
+//Success
+export const LIST_MOVIEFOLLOWTHEATER_SUCCESS =
+  "listMovieFollowTheaterReducer/LIST_MOVIEFOLLOWTHEATER_SUCCESS";
+
+//Failed
+export const LIST_MOVIEFOLLOWTHEATER_FAILED =
+  "listMovieFollowTheaterReducer/LIST_MOVIEFOLLOWTHEATER_FAILED";

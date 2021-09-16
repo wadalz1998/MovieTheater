@@ -1,0 +1,29 @@
+    @mixin customButton() {
+        text-align: center;
+        width: 33px;
+        border-radius: $border-radius;
+    }
+    
+    @mixin button() {
+        background-color: $color-white;
+        border: 0;
+        border-right: 1px solid $color-gray-3;
+        border-radius: 0;
+        color: $color-black;
+    }
+    
+    #buttonMore {
+        &:hover {
+            background-color: $color-red-01;
+            border: 1px solid $color-red-01;
+        }
+    }
+    @mixin backSession(){
+        background-image: url('../../assets/images/back-session.png');
+    }
+    @mixin nextSession(){
+        background-image: url('../../assets/images/next-session.png');
+    }
+    @mixin buttonClose(){
+        background-image:url('../../assets//images/buttonClose.png');
+    }

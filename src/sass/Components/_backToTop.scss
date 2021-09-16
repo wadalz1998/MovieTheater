@@ -1,0 +1,26 @@
+    /* BackToTop */
+    
+    .backToTop {
+        display: block;
+        width: 64px;
+        height: 64px;
+        right: 1%;
+        overflow: hidden;
+        img {
+            width: 50%;
+        }
+        text-align: center;
+        line-height: 78px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        /*Giúp ẩn thẻ */
+        opacity: 0;
+        visibility: hidden;
+    }
+    /*hiện thẻ*/
+    
+    .cd-top--is-visible {
+        visibility: visible;
+        opacity: 1;
+    }

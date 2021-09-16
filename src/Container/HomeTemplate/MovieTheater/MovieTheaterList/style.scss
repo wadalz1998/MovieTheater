@@ -1,0 +1,32 @@
+@import "../../../../sass/Helper/mixin";
+@import "../../../../sass/Helper/variables";
+@import "../../../../sass//Components/button";
+
+.row {
+    .icon__theater {
+        max-width: 10%;
+    }
+}
+.cinema__nametheater {
+    color: green;
+    font-weight: bold;
+}
+.cinema__nameaddress {
+    color: black;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    opacity: 1;
+    // color: black !important;
+}
+.active {
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 1;
+}
+.addScrollBarY {
+    overflow-y: scroll;
+    max-height: 612px;
+}
+// @media (min-width: 992px) {
+
+// }
