@@ -69,3 +69,22 @@
         font-size: $sizeFont;
     }
 }
+@mixin newsLinks() {
+    color: $color-black;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+        color: $color-red-0;
+    }
+}
+
+@mixin newsLink($sizeFont) {
+    color: $color-black;
+    transition: all 0.3s;
+    text-decoration: none;
+    &:hover {
+        color: $color-red-0;
+        font-size: $sizeFont;
+    }
+}

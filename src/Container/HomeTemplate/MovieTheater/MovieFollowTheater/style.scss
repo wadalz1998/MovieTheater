@@ -1,0 +1,58 @@
+@import "../../../../sass/main.scss";
+
+.movie__FollowingTheater {
+    width: 100%;
+    .movie__FollowingTheater__item {
+        .emptyFlim:before {
+            content: "test";
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: black;
+            }
+            .movie__FollowingTheater__title {
+                .customTopBot {
+                    border-bottom: 1px solid #ebebec;
+                    padding: 0.5rem 0;
+                }
+            }
+            .cinema__item__time {
+                border: 1px solid #e4e4e4;
+                background-color: rgba(246, 246, 246, 0.5);
+                border-radius: 4px;
+                color: #00ac4d;
+                align-items: center;
+                text-align: center;
+                p{
+                    margin-bottom: 0;
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+    // .movie__FollowingTheater__title{
+    //     img{
+    //         width: 100%;
+    //         height: 100%;
+    //     }
+    // }
+}
+.text_90p {
+    color: #9b9b9b;
+}
+@media only screen and (min-width: $large) {
+    .movie__FollowingTheater__title {
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+// @media only screen and (max-width: 980px) {
+//     .movie__FollowingTheater__title{
+//         display: none;
+//     }
+// }

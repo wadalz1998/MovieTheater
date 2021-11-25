@@ -1,0 +1,52 @@
+@import "../../sass//main.scss";
+
+#footer {
+    background-color: #222;
+    color: $color-white;
+    font-size: 0.8rem;
+}
+.fontSizeP {
+    white-space: nowrap;
+    a {
+        line-height: 2rem;
+        font-weight: bold;
+        color: $color-gray-4;
+        &:hover {
+            text-decoration: none !important;
+            color: $color-white;
+            transition: 0.5s all;
+        }
+    }
+}
+.conect {
+    .iconConect {
+        background-color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+}
+.iconApp {
+    width: auto;
+    height: 30px;
+    margin: 5px;
+}
+.hrFooter {
+    border-bottom: 1px solid #4a4a4a;
+}
+.imgZion {
+    border-radius: 10px;
+    width: 80px;
+    height: auto;
+}
+.imgBoCo {
+    width: 130px;
+}
+.infoFooter {
+    font-size: 0.8rem;
+    color: #4a4a4a;
+    span:nth-child(1){
+        color: $color-white;
+    }
+}

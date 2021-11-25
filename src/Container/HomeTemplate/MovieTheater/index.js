@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import FilmMovieOfTheater from "./FilmMovieOfTheater";
+import MovieFollowTheater from "./MovieFollowTheater";
 import MovieTheaterList from "./MovieTheaterList";
 import { actListMovietheaterAPI } from "./module/action";
 import Loader from "../../../SmallComponent/Loader";
@@ -14,9 +14,10 @@ function MovieTheater() {
     (state) => state.listMovieTheaterReducer.data
   );
   const loading = useSelector((state) => state.listMovieTheaterReducer.loading);
-  const isWaitting = useSelector(
-    (state) => state.listMovieTheaterReducer.isWaitting
-  );
+  // const isWaitting = useSelector(
+  //   (state) => state.listMovieTheaterReducer.isWaitting
+  // );
+  
   //   shallowEqual xai` khi co 2 phan tu tro len de clear code
   //   const listMovieTheater = useSelector(
   //     (state) => ({list: state.listMovieTheaterReducer.data ,loadding: state.listMovieTheaterReducer.loadding}),
@@ -46,8 +47,8 @@ function MovieTheater() {
                     id="left-tabs-example"
                     defaultActiveKey={`BHDStar`}
                   >
-                    <Row>
-                      <Col sm={2} className="icon__theater">
+                    <Row className="movieTheaterRow">
+                      <Col lg={2} className="icon__theater">
                         <Nav variant="pills" className="flex-column">
                           <Nav.Item>
                             {loading ? (
@@ -65,7 +66,7 @@ function MovieTheater() {
                           </Nav.Item>
                         </Nav>
                       </Col>
-                      <Col sm={10}>
+                      <Col lg={10}>
                         <Tab.Content>
                           {loading ? (
                             <Loader />
@@ -75,10 +76,9 @@ function MovieTheater() {
                               return (
                                 <Tab.Pane key={i} eventKey={item.maHeThongRap}>
                                   {/* {item.maHeThongRap} */}
-
                                   <MovieTheaterList
                                     maHeThongRap={item.maHeThongRap}
-                                  />
+                                  />      
                                 </Tab.Pane>
                               );
                             })

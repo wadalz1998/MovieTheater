@@ -65,13 +65,6 @@ class ListMovie extends Component {
         return (
           <>
             <MovieItem key={item.maPhim} movie={item} />
-
-            {/* /* ----------------------------------tab2 */}
-            {/* <div className="carousel-item" data-interval="false">
-              <div classname="movieComing_hover">
-                <div className="row movieComing_item"></div>
-              </div>
-            </div> */}
           </>
         );
       })
@@ -152,50 +145,6 @@ class ListMovie extends Component {
                     >
                       {this.renderCarouselHTML()};
                     </Carousel>
-                    {/* <div className="row">
-                      <div className="movieComing_hover col-6 col-md-3">
-                        <div className="movieComing_item">
-                          <div className="movieComing_img">
-                            <img
-                              src="./img/trai-tim-quai-vat-c18-16050651706870.png"
-                              alt
-                            />
-                            <div className="movieComing_img_hover"></div>
-                          </div>
-                          <div className="movieComing_award">
-                            <span>
-                              <b>6.1</b>
-                              <p>
-                                <img src="./img/star1.png" alt />
-                                <img src="./img/star1.png" alt />
-                                <img src="./img/star1.png" alt />
-                                <img src="./img/star1.2.png" alt />
-                              </p>
-                            </span>
-                          </div>
-                          <div className="movieComing_soon">
-                            <p className="btn btn-danger">Suất chiếu sớm</p>
-                          </div>
-                          <div className="movieComing_freeYourChoose">
-                            <img src="./img/film_type_2.png" alt />
-                          </div>
-                          <div className="movieComing_content my-2">
-                            <div className="movieComing_content_text">
-                              <p className="mb-2">
-                                <button className="btn btn-danger py-0 px-3 mr-1 ">
-                                  P
-                                </button>
-                                Trái tim quái vật (C18)
-                              </p>
-                              <p className="movieComing_time">89 phút</p>
-                            </div>
-                            <div className="movieComing_content_text_hover">
-                              <button className="btn">MUA VÉ</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </div>

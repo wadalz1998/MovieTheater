@@ -6,7 +6,7 @@ import { Col, Nav, Tab, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import { actMovieTheaterItemAPI } from "./module/action";
-import MovieFollowTheater from "./MovieFollowTheater"
+import MovieFollowTheater from "../MovieFollowTheater";  
 
 import "./style.scss";
 // tuong tu const{ ten } = this.props;
@@ -17,7 +17,7 @@ MovieTheaterList.defaultProps = {
   maHeThongRap: [],
 };
 function MovieTheaterList(props) {
-  // const { listMovieTheater, loading } = props;
+  // const { listMovieTheater, loading } = props; 
   const { maHeThongRap } = props;
   const loading = useSelector(
     (state) => state.listMovieTheaterItemReducer.loading
@@ -51,7 +51,7 @@ function MovieTheaterList(props) {
                 ) : (
                   heThongRap &&
                   Object.entries(heThongRap).map(([key, items], i) => {
-                    // console.log(key + " vs " + items);
+                    // console.log(key + " vs " + items);    
                     return (
                       <Nav.Item className={key === maHeThongRap && items.length>5 ? 'addScrollBarY' : ''}>
                       <>
@@ -92,21 +92,21 @@ function MovieTheaterList(props) {
                 <Loader />
               ) : (
                 heThongRap &&
-                Object.entries(heThongRap).map(([key, items], i) => {
+                Object.entries(heThongRap).map(([TenInReducer, items], i) => {
                   // console.log(key + " vs " + items);
                   return (
                     <>
-                      {key === maHeThongRap ? (
+                      {TenInReducer === maHeThongRap ? (
                         items.length &&
                         items.map((item, i) => {
-                          return (
-                            <Tab.Pane eventKey={key + i}>
-                              <MovieFollowTheater keyHeThongRap={key}></MovieFollowTheater>
+                          return (      
+                            <Tab.Pane eventKey={TenInReducer + i}>                      
+                              <MovieFollowTheater keyHeThongRap={maHeThongRap} diaChiCha={item.diaChi}></MovieFollowTheater>
                             </Tab.Pane>
-                          );
+                          );  
                         })
                       ) : (
-                        <></>
+                        < ></>
                       )}
                     </>
                   );

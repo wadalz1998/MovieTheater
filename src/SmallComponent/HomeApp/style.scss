@@ -1,0 +1,42 @@
+@import "../../sass/main.scss";
+
+#homeApp {
+    background-image: url("../../assets/images/backapp.jpg");
+    padding: 120px 0 80px 0;
+}
+.textCustom {
+    color: $color-white;
+    .customPadding {
+        padding: 0 60px;
+        p:nth-child(1) {
+            padding-top: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+}
+.mobileCarousel {
+    position: relative !important;
+    text-align: center;
+    padding: 0 16% !important;
+    .imgMobile {
+        height: 400px;
+        width: auto;
+    }
+    .carouselMobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 400px;
+        img {
+            border-radius: 19px;
+            width: 178px;
+            height: 380px;
+        }
+        .slick-list{
+            width: 190px !important ;
+            transform: translate(196px, 10px);
+        }
+    }
+}
