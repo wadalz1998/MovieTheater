@@ -3,17 +3,18 @@ import React, { Component } from "react";
 import star from "../../../../assets/images/star1.png";
 import halfStar from "../../../../assets/images/star1.2.png";
 import ButtonPlay from "../../../../assets/images/play-video.png";
-import buttonClose from "../../../../assets/images/buttonClose.png";
-
-import { Button, Modal } from "react-bootstrap";
-import ReactPlayer from "react-player";
+import getVideoId from 'get-video-id';
+import { Button } from "react-bootstrap";
+import ModalVideo from 'react-modal-video'
 import "./style.scss";
+import { Link } from "react-router-dom";
 
 export default class MovieItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
+      isOpen: false,
     };
   }
   soSao = (chiSoDanhGia) => {
@@ -36,42 +37,25 @@ export default class MovieItem extends Component {
     });
   };
   showModal = (trailer) => {
+    const { id } = getVideoId(trailer);
     return (
       <>
-        <Button
-          variant="link"
-          className="text-decoration-none text-white"
-          onClick={this.handleShow}
-        >
-          <img src={ButtonPlay}></img>
-        </Button>
-        <Modal show={this.state.showModal} onHide={this.handleClose}>
-          <Modal.Header>
-            <div>
-              <Button variant="link" onClick={this.handleClose}>
-                <img src={buttonClose} className="btn__close"></img>
-              </Button>
-            </div>
-            <ReactPlayer url={trailer} playing />
-          </Modal.Header>
-        </Modal>
+        <React.Fragment>
+          <ModalVideo channel='youtube' autoplay isOpen={this.state.isOpen} videoId={id} onClose={() => this.setState({ isOpen: false })} />
+          <Button variant="link" className="text-decoration-none text-white" onClick={() => this.setState({ isOpen: true })}>
+            <img src={ButtonPlay}></img>
+          </Button>
+
+        </React.Fragment>
       </>
     );
   };
   render() {
     const { movie } = this.props;
     return (
-      <div className="col-3 movieComing_hover">
+      <Link to={`/detail/${movie.maPhim}`} className="col-3 movieComing_hover">
         <div className="movieComing__detail">
           {this.showModal(movie.trailer)}
-          {/* <a
-            className="text-decoration-none text-white "
-            // data-autoplay="true"
-            // data-vbtype="video"
-            href={movie.trailer}
-          >
-            <img src={ButtonPlay}></img>
-          </a> */}
         </div>
         <div className="movieComing_img">
           <img src={movie.hinhAnh} alt />
@@ -88,17 +72,17 @@ export default class MovieItem extends Component {
           <div className="movieComing_content_text">
             <p className="mb-2">
               <button className="btn btn-success py-0 px-3 mr-1 disable">
-                P
+                C13
               </button>
               <span className="font-weight-bold">{movie.tenPhim}</span>
             </p>
             <p className="movieComing_time"> 100 phút</p>
           </div>
           <div className="movieComing_content_text_hover">
-            <button className="btn">MUA VÉ</button>
+            <button className="btn"><Link to={`/detail/${movie.maPhim}`}>MUA VÉ </Link></button>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }

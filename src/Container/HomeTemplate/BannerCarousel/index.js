@@ -6,9 +6,7 @@ import BannerC from "../../../assets/images/BannerC.png";
 import BannerD from "../../../assets/images/BannerD.jpg";
 import ButtonLeftCarousel from "../../../assets/images/back-session.png";
 import ButtonRightCarousel from "../../../assets/images/next-session.png";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ButtonPlay from "../../../assets/images/play-video.png";
-
 import "./style.scss";
 
 import { Link } from "react-router-dom";

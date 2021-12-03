@@ -1,10 +1,11 @@
-import NavBarHome from "./SmallComponent/NavbarHome/index";
+// import NavBarHome from "./SmallComponent/NavbarHome/index";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { routeHome } from "./Route";
-
+import { routeHome, routeAdmin } from "./Route";
+import PageNotFound from "./SmallComponent/PageNotFound"
+import LogIn from "./SmallComponent/LogIn"
 import HomeTemplate from "./Container/HomeTemplate";
-
+import AdminTemplate from "./Container/AdminTemplate"
 function App() {
   const showLayoutHome = (route) => {
     if (route && route.length > 0)
@@ -19,10 +20,23 @@ function App() {
         );
       });
   };
+  const showLayoutAdmin = (route) => {
+    if (route && route.length > 0)
+      return route.map((item, index) => {
+        return (
+          <AdminTemplate key={index} exact={item.exact} path={item.path} Component={item.component} />
+        )
+      })
+  }
   // <NavBarHome />
   return (
     <BrowserRouter>
-      <Switch>{showLayoutHome(routeHome)};</Switch>
+      <Switch>
+        {showLayoutHome(routeHome)}
+        {showLayoutAdmin(routeAdmin)}
+        <Route path="/login" component={LogIn} />
+        <Route path="" component={PageNotFound} />
+      </Switch>
     </BrowserRouter>
   );
 }

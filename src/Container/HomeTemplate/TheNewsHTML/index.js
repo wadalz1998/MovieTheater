@@ -7,7 +7,6 @@ export default function TheNewsHTML() {
         <section className="news">
             <Tabs
                 defaultActiveKey="home"
-                transition={false}
                 id="noanim-tab-example"
                 className="mb-3 container-md-fluid container-lg"
             >
@@ -22,8 +21,8 @@ export default function TheNewsHTML() {
                 </Tab>
             </Tabs>
             <div class="button_responsive text-center my-3">
-            <button id="buttonMore" class="btn btn-outline-secondary">XEM THÊM</button>
-        </div>
-        </section>      
+                <button id="buttonMore" class="btn btn-outline-secondary">XEM THÊM</button>
+            </div>
+        </section>
     )
 }

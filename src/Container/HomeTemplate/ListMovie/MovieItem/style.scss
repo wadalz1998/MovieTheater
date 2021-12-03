@@ -1,6 +1,5 @@
-@import "../../../../sass/Helper/mixin";
-@import "../../../../sass/Helper/variables";
-@import "../../../../sass//Components/button";
+@import "../../../../sass/main.scss";
+@import "node_modules/react-modal-video/scss/modal-video.scss";
 
 .modal-content {
     width: 853px !important;
@@ -49,7 +48,7 @@
         // border: 1px solid white;
         // border-radius: 50%;
         margin: 0;
-        top: 42%;
+        top: 37%;
         left: 63%;
         transform: translate(-100%, -50%);
         img {
@@ -60,7 +59,10 @@
     transition: all 0.2s;
     opacity: 0;
 }
-
+.modal-video-close-btn {
+    top: 4% !important;
+    left: 105% !important;
+}
 .movieComing_img {
     position: relative;
     img {
@@ -131,6 +133,9 @@
             color: white;
             font-weight: bold;
             padding: $pd-1 0;
+            a {
+                color: white !important;
+            }
         }
     }
 }

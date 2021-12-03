@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { actListMovieFollowTheaterAPI } from "./module/action";
 import Loader from "../../../../SmallComponent/Loader";
+import { Link } from "react-router-dom"
 import "./style.scss";
 
 MovieFollowTheater.propTypes = {
@@ -72,7 +73,9 @@ function MovieFollowTheater(props) {
                                               {itemDanhSachPhim && itemDanhSachPhim.lstLichChieuTheoPhim.slice(0, 5).map((item) => {
                                                 return (
                                                   <div className="mr-2 p-0 py-1 m-1 cinema__item__time">
-                                                    <p> {convert(new Date(item.ngayChieuGioChieu).toLocaleTimeString())}</p>
+                                                    <Link to="/bookticket">
+                                                      <p> {convert(new Date(item.ngayChieuGioChieu).toLocaleTimeString())}</p>
+                                                    </Link>
                                                   </div>
                                                 )
                                               })}

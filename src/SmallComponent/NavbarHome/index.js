@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/web-logo.png";
 import menuOption from "../../assets/images/menu-options.png";
@@ -7,14 +7,38 @@ import avatar from "../../assets/images/avatar.png";
 import locationHeder from "../../assets/images/location-header.png";
 
 import "./style.scss";
-export default class NavBarHome extends Component {
+export class NavBarHome extends Component {
+  logOut = () => {
+    localStorage.clear()
+  }
+  checkUserLogin = () => {
+    if (localStorage.getItem("UserAdmin") !== null || localStorage.getItem("UserCustomer") !== null) {
+      {
+        const usernameCustomer = JSON.parse(localStorage.getItem('UserCustomer'))
+        // const usernameAdmin = JSON.parse(localStorage.getItem('UserAdmin'))
+        return (
+        <div className="statusUser">
+          {usernameCustomer ? <p>Xin Chào Bạn {usernameCustomer.hoTen}</p> : <p>Xin Chào, Admin</p>}
+          <p>&nbsp;-&nbsp;</p>
+          <Link to="/" onClick={this.logOut}> Thoát</Link>
+        </div>
+        )
+      }
+    }
+    else
+      return (
+        <div className="imgCircle">
+          <Link className="white" to="/login">   <img src={avatar} alt />Đăng Nhập</Link>
+        </div>
+      )
+  }
   render() {
     return (
       <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand header__left" href="#">
+          <Link to="/" className="navbar-brand header__left">
             <img className="webLogo" src={logo} alt="" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -54,12 +78,10 @@ export default class NavBarHome extends Component {
             </ul>
           </div>
           <div className="right">
-            <div className="imgCircle">
-              <a href="https://tix.vn/login">
-                <img src={avatar} alt />
-                <p className="white">Đăng Nhập</p>
-              </a>
-            </div>
+            {/* <div className="imgCircle">
+              <Link className="white" to="/login">   <img src={avatar} alt />Đăng Nhập</Link>
+            </div> */}
+            {this.checkUserLogin()}
             <div className="selectLocation ">
               <div className="dropdown">
                 <button
@@ -127,3 +149,5 @@ export default class NavBarHome extends Component {
     );
   }
 }
+
+export default NavBarHome;

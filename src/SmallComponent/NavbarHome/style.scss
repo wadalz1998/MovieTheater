@@ -1,5 +1,5 @@
-@import '../../sass/Helper/variables';
-@import '../../sass/Helper/mixin';
+@import "../../sass/Helper/variables";
+@import "../../sass/Helper/mixin";
 
 * {
     margin: 0;
@@ -139,5 +139,12 @@ header {
         img {
             width: 100%;
         }
+    }
+}
+.statusUser {
+    display: flex;
+    align-items: center;
+    p {
+        margin: 0;
     }
 }

@@ -1,0 +1,45 @@
+// @import "../../../sass//main.scss";
+
+.customTexta {
+    a:hover {
+        text-decoration: none;
+    }
+}
+.navBarAdminLeft {
+    .active {
+        background-color: blue;
+        font-size: 40px;
+        .customPaddingNavbar {
+            color: white;
+        }
+    }
+    .navbar {
+        margin-left: 16px;
+        &:hover {
+            background-color: blue;
+            .customPaddingNavbar {
+                color: white;
+            }
+        }
+        .customPaddingNavbar {
+            padding-left: 40px;
+            margin: 0;
+            svg{
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.LogoAdmin {
+    display: flex;
+    justify-content: center;
+    img {
+        height: 80px;
+        width: 80px;
+    }
+    h3 {
+        padding-top: 25px;
+    }
+    margin-bottom: 50px;
+}

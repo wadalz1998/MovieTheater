@@ -1,23 +1,26 @@
 @import "../../../sass/main.scss";
-.nav-tabs {
-    border-bottom: none !important;
-    justify-content: center;
-    line-height: 0.8rem;
-    a {
-        color: $color-black;
-    }
-    :hover {
-        color: #fb4226;
-        font-size: 1.5rem;
-        transition: 0.5s all;
-        border: none !important;
-    }
-    .nav-link.active {
-        border-color: white !important;
-        color: #fb4226 !important;
-        font-size: 1.5rem;
+.news {
+    .nav-tabs {
+        border-bottom: none !important;
+        justify-content: center;
+        line-height: 0.8rem;
+        a {
+            color: $color-black;
+        }
+        :hover {
+            color: #fb4226;
+            font-size: 1.5rem;
+            transition: 0.5s all;
+            border: none !important;
+        }
+        .nav-link.active {
+            border-color: white !important;
+            color: #fb4226 !important;
+            font-size: 1.5rem;
+        }
     }
 }
+
 .news {
     padding-bottom: 1rem;
     .news__item__img {
