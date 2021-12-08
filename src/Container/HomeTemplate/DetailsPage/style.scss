@@ -1,12 +1,17 @@
 .pageDetail__main {
-    position: relative;
+    // position: relative;
     background-color: #0a2029;
 }
 .pagedetail__content {
-    position: relative;
+    // position: relative;
     overflow: hidden;
     // width: 100%;
     // height: 100%;
+    .customLoader {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+    }
     .backgroundImage__Custom {
         width: 100%;
         height: 100vh;
@@ -67,14 +72,28 @@
     }
 }
 .tabInfo {
+    max-width: 870px;
+    text-align: center;
+    margin: auto;
     .nav-tabs {
         border-bottom: none !important;
         justify-content: center;
         line-height: 0.8rem;
+        .nav-link {
+            &:hover {
+                border-color: transparent;
+                font-size: 1.1rem;
+                transition: 0.5s all;
+            }
+        }
+        .nav-link.active {
+            color: red;
+            background-color: transparent;
+            border-color: transparent;
+            font-size: 1.1rem;
+        }
+        a {
+            color: white;
+        }
     }
-}
-.customLoader {
-    position: absolute;
-    top: 50%;
-    right: 50%;
 }

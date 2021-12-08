@@ -27,6 +27,9 @@ function LogIn() {
     }
     return (
         <div className="backGroundLogIn">
+            {loading ? <div className="customLoader">
+                <Loader />
+            </div> : ""}
             <div className="container">
                 <div className="d-flex justify-content-center h-100 paddingCustom">
                     <div className="card">
@@ -44,7 +47,6 @@ function LogIn() {
                                         e.preventDefault(); setAccount({ ...Account, taiKhoan: e.target.value })
                                     }} />
                                 </div>
-                                {loading ? <Loader /> : ""}
                                 <div className="input-group form-group">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text"><FiKey /></span>

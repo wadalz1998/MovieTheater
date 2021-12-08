@@ -8,7 +8,7 @@ export default function TheNewsHTML() {
             <Tabs
                 defaultActiveKey="home"
                 id="noanim-tab-example"
-                className="mb-3 container-md-fluid container-lg"
+                className="mb-3 container-md-fluid container-lg scrollToNews"
             >
                 <Tab eventKey="home" title="Điện ảnh 24h">
                     <NewsHTML />

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import MovieFollowTheater from "./MovieFollowTheater";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import MovieTheaterList from "./MovieTheaterList";
 import { actListMovietheaterAPI } from "./module/action";
 import Loader from "../../../SmallComponent/Loader";
@@ -17,7 +16,7 @@ function MovieTheater() {
   // const isWaitting = useSelector(
   //   (state) => state.listMovieTheaterReducer.isWaitting
   // );
-  
+
   //   shallowEqual xai` khi co 2 phan tu tro len de clear code
   //   const listMovieTheater = useSelector(
   //     (state) => ({list: state.listMovieTheaterReducer.data ,loadding: state.listMovieTheaterReducer.loadding}),
@@ -31,7 +30,7 @@ function MovieTheater() {
   }, []);
 
   return (
-    <section className="cinema" id="c2">
+    <section className="cinema scrollTheater">
       <div className="d-none d-md-block black_news">
         <div className="container" />
         <div className="cinema_custom d-none d-md-block container-md-fluid container-lg my-4">
@@ -78,7 +77,7 @@ function MovieTheater() {
                                   {/* {item.maHeThongRap} */}
                                   <MovieTheaterList
                                     maHeThongRap={item.maHeThongRap}
-                                  />      
+                                  />
                                 </Tab.Pane>
                               );
                             })

@@ -48,6 +48,7 @@ function MovieFollowTheater(props) {
                 {keyName === keyHeThongRap ?
                   [key[0].lstCumRap.map((item, i) => {
                     // { console.log(item) }
+                    // onClick="document.getElementById('chartdiv').style.height = '200px'"
                     return (
                       <div key={i}>
                         {item.diaChi && item.diaChi === diaChiCha

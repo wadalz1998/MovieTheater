@@ -20,7 +20,9 @@ html,
 body {
     font-family: "SFprotext";
 }
-
+.aCursor{
+    cursor: pointer;
+}
 .clear {
     clear: both;
 }
@@ -40,6 +42,11 @@ header {
             &:hover {
                 .nav-link {
                     color: #fb4226;
+                }
+            }
+            a{
+                &:hover{
+                    text-decoration: none;
                 }
             }
         }

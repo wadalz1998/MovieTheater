@@ -78,7 +78,7 @@ class ListMovie extends Component {
         <div className="container-md-fluid container-lg">
           <nav>
             <div
-              className="nav nav-tabs justify-content-center"
+              className="nav nav-tabs justify-content-center scrollListMovie"
               id="nav-tab"
               role="tablist"
             >

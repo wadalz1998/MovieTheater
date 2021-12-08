@@ -1,0 +1,24 @@
+.rowLeftTitle {
+    display: flex;
+    p {
+        color: white;
+    }
+    .contentTitle {
+        width: 35%;
+        text-align: left;
+    }
+    .contentInfo {
+        width: 65%;
+        text-align: left;
+    }
+}
+.contentFilmInfo {
+    width: 65%;
+    max-height: 220px;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 9; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}

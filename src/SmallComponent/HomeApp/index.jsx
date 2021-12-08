@@ -21,7 +21,7 @@ export default function HomeApp() {
         autoplaySpeed: 3000,
     };
     return (
-        <section className="app__content">
+        <section className="app__content scrollToHomeApp">
             <div className="" id="homeApp">
                 <div className="container">
                     <Row className="textCustom">

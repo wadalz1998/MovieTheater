@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import logo from "../../assets/images/web-logo.png";
 import menuOption from "../../assets/images/menu-options.png";
 import avatar from "../../assets/images/avatar.png";
 import locationHeder from "../../assets/images/location-header.png";
+import { Link as LinkScroll } from "react-scroll"
+import NavItem from "./navitem.jsx"
 
 import "./style.scss";
 export class NavBarHome extends Component {
+
   logOut = () => {
     localStorage.clear()
   }
@@ -17,11 +19,11 @@ export class NavBarHome extends Component {
         const usernameCustomer = JSON.parse(localStorage.getItem('UserCustomer'))
         // const usernameAdmin = JSON.parse(localStorage.getItem('UserAdmin'))
         return (
-        <div className="statusUser">
-          {usernameCustomer ? <p>Xin Chào Bạn {usernameCustomer.hoTen}</p> : <p>Xin Chào, Admin</p>}
-          <p>&nbsp;-&nbsp;</p>
-          <Link to="/" onClick={this.logOut}> Thoát</Link>
-        </div>
+          <div className="statusUser">
+            {usernameCustomer ? <p>Xin Chào Bạn {usernameCustomer.hoTen}</p> : <p>Xin Chào, Admin</p>}
+            <p>&nbsp;-&nbsp;</p>
+            <Link to="/" onClick={this.logOut}> Thoát</Link>
+          </div>
         )
       }
     }
@@ -33,6 +35,7 @@ export class NavBarHome extends Component {
       )
   }
   render() {
+    // scrollListMovie
     return (
       <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,26 +58,10 @@ export class NavBarHome extends Component {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <a className="nav-link" ref="#c1">
-                  Lịch Chiếu
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#c2">
-                  Cụm rạp
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#c3">
-                  Tin Tức
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#homeApp">
-                  Ứng dụng
-                </a>
-              </li>
+              <NavItem scrollToClass={`scrollListMovie`} title="Lịch chiếu" />
+              <NavItem scrollToClass={`scrollTheater`} title="Cụm rạp" />
+              <NavItem scrollToClass={`scrollToNews`} title="Tin Tức" />
+              <NavItem scrollToClass={`scrollToHomeApp`} title="Ứng dụng" />
             </ul>
           </div>
           <div className="right">
@@ -145,7 +132,7 @@ export class NavBarHome extends Component {
             </div>
           </div>
         </nav>
-      </header>
+      </header >
     );
   }
 }
