@@ -15,12 +15,16 @@ export const fetchLoginAPI = (user, history) => {
         if (result.data.maLoaiNguoiDung === "QuanTri") {
           localStorage.setItem("UserAdmin", JSON.stringify(result.data))
           dispatch(actLoginSuccess(result.data));
-          history.push("/dashboard");
+          setTimeout(() => {
+            history.push("/dashboard");
+          }, 2300);
         }
         else if (result.data.maLoaiNguoiDung === "KhachHang") {
           localStorage.setItem("UserCustomer", JSON.stringify(result.data))
           dispatch(actLoginSuccess(result.data));
-          history.push("/");
+          setTimeout(() => {
+            history.push("/");
+          }, 2300);
         }
         else
           return Promise.reject({
@@ -32,7 +36,7 @@ export const fetchLoginAPI = (user, history) => {
       })
       .catch((err) => {
         // console.log(err);
-        dispatch(actLoginFailed("Loi~"));
+        dispatch(actLoginFailed(err));
       });
   };
 };

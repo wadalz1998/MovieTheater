@@ -1,0 +1,46 @@
+// .MuiFormLabel-root.Mui-focused {
+//     color: orange !important;
+// }
+.customLoaderRegister {
+    z-index: 10;
+}
+.padding__RegisterCustom {
+    padding: 8% 0;
+    .card {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 400px;
+        .card-header {
+            h3 {
+                color: white;
+            }
+        }
+    }
+}
+.customInput__Register {
+    padding: 5px 10px;
+    background-color: #1a73e8;
+    border-color: transparent;
+    color: white;
+    &:hover {
+        background-color: #337ab7;
+    }
+}
+.register__content {
+    .backGround__register {
+        background-image: linear-gradient(to bottom, rgba(20, 50, 93, 0.9), rgba(8, 22, 48, 0.9));
+        .card-body {
+            .MuiInputBase-input {
+                background-color: white;
+            }
+            .MuiTextField-root {
+                width: 100%;
+                .MuiInputBase-formControl {
+                    padding-bottom: 20px;
+                    .MuiFilledInput-input {
+                        border-radius: 7px;
+                    }
+                }
+            }
+        }
+    }
+}

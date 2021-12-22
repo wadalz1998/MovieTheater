@@ -4,6 +4,7 @@ import "./App.css";
 import { routeHome, routeAdmin } from "./Route";
 import PageNotFound from "./SmallComponent/PageNotFound"
 import LogIn from "./SmallComponent/LogIn"
+import Register from "./SmallComponent/Register"
 import HomeTemplate from "./Container/HomeTemplate";
 import AdminTemplate from "./Container/AdminTemplate"
 function App() {
@@ -35,6 +36,7 @@ function App() {
         {showLayoutHome(routeHome)}
         {showLayoutAdmin(routeAdmin)}
         <Route path="/login" component={LogIn} />
+        <Route path="/register" component={Register}/>
         <Route path="" component={PageNotFound} />
       </Switch>
     </BrowserRouter>

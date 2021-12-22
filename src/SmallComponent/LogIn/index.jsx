@@ -5,18 +5,46 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchLoginAPI } from "./module/action"
 import { useSelector } from 'react-redux';
-import Loader from "../../SmallComponent/Loader"
+import Modal from 'react-modal';
+// import Loader from "../../SmallComponent/Loader"
+import Loader from '../Loader';
 function LogIn() {
     const [Account, setAccount] = useState({ taiKhoan: "", matKhau: "" });
+    const dataLogin = useSelector(state => state.authReducer.data);
     const errLogin = useSelector(state => state.authReducer.err);
     const loading = useSelector(state => state.authReducer.loading);
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const openModal = () => {
+        setIsOpen(true);
+    }
+    const closeModal = () => {
+        setIsOpen(false);
+    }
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            height: '200px',
+            width: '200px',
+            background: 'transparent',
+            border: 'transparent',
+        },
+    };
     const dispatch = useDispatch();
     // console.log(Account);
     const history = useHistory();
-    console.log(history.location.pathname);
+    // console.log(history.location.pathname);
     const handleSubmit = (e) => {
         e.preventDefault();
+        openModal();
         dispatch(fetchLoginAPI(Account, history))
+        setTimeout(() => {
+            closeModal()
+        }, 2200);
     }
     const renderNotice = () => {
         if (errLogin === undefined) {
@@ -25,11 +53,24 @@ function LogIn() {
             </div>
         }
     }
+    const checkLoadingLogin = () => {
+        if (loading)
+            return (
+                <div className="loader">
+                </div>
+            )
+        if (errLogin === undefined && !dataLogin)
+            return (
+                <div className="loader fail">
+                </div>
+            )
+        if (dataLogin)
+            return (
+                <div className="loader success"></div>
+            )
+    }
     return (
         <div className="backGroundLogIn">
-            {loading ? <div className="customLoader">
-                <Loader />
-            </div> : ""}
             <div className="container">
                 <div className="d-flex justify-content-center h-100 paddingCustom">
                     <div className="card">
@@ -39,6 +80,15 @@ function LogIn() {
                         <div className="card-body">
                             <form onSubmit={handleSubmit} >
                                 {renderNotice()}
+                                <Modal
+                                    isOpen={modalIsOpen}
+                                    // onAfterOpen={afterOpenModal}
+                                    style={customStyles}
+                                    contentLabel="Example Modal"
+                                >
+                                    {checkLoadingLogin()}
+
+                                </Modal>
                                 <div className="input-group form-group">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text"><FiUser /></span>

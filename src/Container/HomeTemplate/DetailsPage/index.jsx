@@ -79,7 +79,7 @@ function DetailsPage() {
                                 className="mb-3"
                             >
                                 <Tab eventKey="home" title="Lịch Chiếu">
-                                    <Showtimes />
+                                    <Showtimes  detailShowTimes={details}/>
                                 </Tab>
                                 <Tab eventKey="profile" title="Thông Tin">
                                     <FilmInfo ngayKhoiChieu={details.ngayKhoiChieu} moTa={details.moTa} />
