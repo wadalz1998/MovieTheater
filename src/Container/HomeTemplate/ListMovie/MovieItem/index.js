@@ -49,7 +49,7 @@ export default class MovieItem extends Component {
     );
   };
   render() {
-    const { movie } = this.props;
+    const { movie} = this.props;
     return (
       <>
         <div className="col-3 movieComing_hover">

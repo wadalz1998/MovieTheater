@@ -8,7 +8,9 @@ import listMovieFollowTheaterReducer from "../../Container/HomeTemplate/MovieThe
 import authReducer from "../../SmallComponent/LogIn/module/reducer";
 import detailsPageReducer from "../../Container/HomeTemplate/DetailsPage/module/reducer";
 import listInfoUserReducer from "../../Container/AdminTemplate/DashBoard/module/reducer"
+import listInfoFilmReducer from "../../Container/AdminTemplate/ManageFilm/module/reducer";
 import registerReducer from "../../SmallComponent/Register/module/reducer"
+import handleManageFilm from "../../Container/AdminTemplate/ManageFilm/ConditionHanding/module/reducer"
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -28,6 +30,8 @@ const rootReducer = combineReducers({
   detailsPageReducer,
   listInfoUserReducer,
   registerReducer,
+  listInfoFilmReducer,
+  handleManageFilm,
   // detailMovieReducer,
   // authReducer,
 });

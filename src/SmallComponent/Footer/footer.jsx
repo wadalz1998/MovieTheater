@@ -16,7 +16,7 @@ import zionLogo from "../../assets/images/iconFooter/zion-logo.jpg"
 import infoVerify from "../../assets/images/iconFooter/d1e6bd560daa9e20131ea8a0f62e87f8.png"
 import "./style.scss"
 export default function Footer() {
-    return (
+      return (
         <footer id="footer" className="py-3">
             <div className="container">
                 <div className="row">

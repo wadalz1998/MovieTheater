@@ -116,7 +116,7 @@ function Register() {
     // console.log(errors && errors);
     const renderNoticeRegister = () => {
         if (errorRegister === undefined) {
-            return <div className="alert alert-danger"> Tài khoản đã tồn tại!
+            return <div className="alert alert-danger"> Tài khoản hoặc email đã tồn tại!
                 {/* {errLogin.response.data} */}
             </div>
         }

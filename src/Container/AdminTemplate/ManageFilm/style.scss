@@ -1,0 +1,54 @@
+.manageFilm__title {
+    .row {
+        justify-content: space-between;
+        .customMarginButton {
+            margin-right: 5%;
+        }
+    }
+}
+.managerFilm__Content {
+    .textLong {
+        width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .MuiButton-root {
+            padding: 0;
+            color: red;
+            font-weight: bold;
+            &:hover {
+                background-color: white;
+            }
+        }
+        .modal-video {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+    .tdFilm {
+        width: 85px;
+        img {
+            width: 85px;
+            height: 85px;
+        }
+    }
+}
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 110%;
+    background-color: rgba(255, 255, 255, 0.75);
+    transform: translateY(-100px);
+    transition: transform 0.5s ease-in-out;
+}
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+    transform: translateY(-100px);
+}

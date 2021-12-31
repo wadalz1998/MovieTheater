@@ -1,7 +1,6 @@
-import NavBarHome from "../SmallComponent/NavbarHome";
-
 import DashBoard from "../Container/AdminTemplate/DashBoard"
-import AddTest from "../Container/AdminTemplate/add"
+import ManageFilm from "../Container/AdminTemplate/ManageFilm"
+import FilmShowTime from "../Container/AdminTemplate/FilmShowTime"
 import DetailsPage from "../Container/HomeTemplate/DetailsPage"
 import BookTicket from "../Container/HomeTemplate/BookTicket"
 import HomePage from "../Container/HomeTemplate/homepage"
@@ -35,9 +34,15 @@ const routeAdmin = [
     exact: true,
   },
   {
-    path: "/add",
-    component: AddTest,
+    path: "/managefilm",
+    component: ManageFilm,
     exact: false,
+  },
+  {
+    path: "/showtime",
+    component: FilmShowTime,
+    exact: false,
+
   }
 ];
 export { routeHome, routeAdmin };

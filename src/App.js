@@ -36,7 +36,7 @@ function App() {
         {showLayoutHome(routeHome)}
         {showLayoutAdmin(routeAdmin)}
         <Route path="/login" component={LogIn} />
-        <Route path="/register" component={Register}/>
+        <Route path="/register" component={Register} />
         <Route path="" component={PageNotFound} />
       </Switch>
     </BrowserRouter>

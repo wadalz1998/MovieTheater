@@ -19,7 +19,6 @@ export const actDetailMovieAPI = (id) => {
       });
   };
 };
-
 const actDetailMovieRequest = () => {
   return {
     type: ActionType.DETAIL_MOVIE_REQUEST,

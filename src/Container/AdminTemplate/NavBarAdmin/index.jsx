@@ -1,20 +1,25 @@
 import React from 'react'
 import { Container, Navbar } from 'react-bootstrap'
-import { Link, useHistory, useLocation } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import logo from "../../../logo.svg"
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiOutlineVideoCamera } from "react-icons/ai";
 import { BsFilm } from "react-icons/bs";
+
 import "./style.scss"
 export default function NavBarAdmin() {
     const history = useHistory();
     const aiFillHome = <AiFillHome />
     const bsFilm = <BsFilm />
+    const aiOutlineVideoCamera = <AiOutlineVideoCamera />
     const navBarFunc = [
         {
             name: "DashBoard", to: "/dashboard", icon: aiFillHome,
         },
         {
-            name: "Quản Lý Phim", to: "/add", icon: bsFilm,
+            name: "Quản Lý Phim", to: "/managefilm", icon: bsFilm,
+        },
+        {
+            name: "QL Suất Chiếu", to: "/showtime", icon: aiOutlineVideoCamera,
         },
     ]
     const navBarActive = props => {
